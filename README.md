@@ -1,1 +1,1 @@
-# HealthApplication
+# Student Application
