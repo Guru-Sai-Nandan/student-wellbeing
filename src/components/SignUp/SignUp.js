@@ -40,54 +40,52 @@ const SignUp = () => {
   };
   let navigate = useNavigate()
   return (
-    <div className="flex-center">
-      <div className="container">
-        <div className="signup-form">
-          <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
-          <form onSubmit={handleSubmit(addUser)}>
-            <div className="input-group">
-              <label htmlFor="name" className="input-label">
-                Username{" "}
-              </label>
-              <input
-                type="text"
-                name="username"
-                placeholder="username"
-                id="username"
-                className="input-field mt-1"
-                {...register("username", { required: true })}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor="password" className="input-label">
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                id="password"
-                className="input-field mt-1"
-                {...register("password", { required: true })}
-              />
-            </div>
-            <button type="submit" className="button"
-            >
-              Sign Up
-            </button>
+    <div className="flex mt-[7%] mx-auto ml-8">
+      <div className="signup-form mx-auto">
+        <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+        <form onSubmit={handleSubmit(addUser)}>
+          <div className="input-group">
+            <label htmlFor="name" className="input-label">
+              Username{" "}
+            </label>
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              id="username"
+              className="input-field mt-1"
+              {...register("username", { required: true })}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password" className="input-label">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              id="password"
+              className="input-field mt-1"
+              {...register("password", { required: true })}
+            />
+          </div>
+          <button type="submit" className="button"
+          >
+            Sign Up
+          </button>
 
-          </form>
-        </div>
+        </form>
+      </div>
 
-        <div className="welcome-box">
-          <h2 className="text-xl font-bold mb-4 text-[#f8f9fa]">Welcome to App</h2>
+      {/* <div className="welcome-box">
+          <h2 className="text-xl font-bold mb-4 text-[#f8f9fa]">Welcome to Creative Haven</h2>
           <img
-            src="https://img.freepik.com/free-vector/healthy-lifestyle-diet-fitness-vector-sign-shape-heart-with-multiple-icons-depicting-various-sports-vegetables-cereals-seafood-meat-fruit-sleep-weight-beverages_1284-44073.jpg?w=1380&t=st=1701497993~exp=1701498593~hmac=1e9bc1c9790b2534ac1f29837fe443a6cdc2f060823b6206ddef79566139eb2a"
+            src="https://img.freepik.com/free-photo/modern-equipped-computer-lab_23-2149241213.jpg?size=626&ext=jpg&ga=GA1.1.1458602147.1706429356&semt=sph"
             alt=""
             className="rounded mt-14"
           />
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 };

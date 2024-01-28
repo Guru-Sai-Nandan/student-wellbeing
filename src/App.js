@@ -4,14 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
 import { ThemeProvider } from "@material-tailwind/react";
 import { ChakraProvider, theme } from "@chakra-ui/react"
-import HydrationReminder from "./components/HydrationReminder";
 import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
-import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
-import NutritionTable from "./components/Nutrition/Nutrition";
 import Media from "./components/Media/Media";
 import Header from "./components/Header";
+import Pomodoro from "./components/Pomodoro";
+import Todo from "./components/Todo";
+import { TodoProvider } from './context/TodoContext';
 
 function App() {
 
@@ -25,17 +25,21 @@ function App() {
       <ChakraProvider theme={theme}>
         <React.StrictMode>
           <ThemeProvider>
-            <BrowserRouter>
-              <Header />
-              <Routes>
-                <Route path="/" element={<HomeScreen />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/signup' element={<SignUp />} />
-                <Route path='/media' element={<Media />} />
+            <TodoProvider>
 
+              <BrowserRouter>
+                <Header />
+                <Routes>
+                  <Route path="/" element={<HomeScreen />} />
+                  <Route path='/login' element={<Login />} />
+                  <Route path='/signup' element={<SignUp />} />
+                  <Route path='/media' element={<Media />} />
+                  <Route path='/pomodoro' element={<Pomodoro />} />
+                  <Route path='/todo' element={<Todo />} />
 
-              </Routes>
-            </BrowserRouter>
+                </Routes>
+              </BrowserRouter>
+            </TodoProvider>
           </ThemeProvider>
         </React.StrictMode>
       </ChakraProvider>
